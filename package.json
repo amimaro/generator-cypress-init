@@ -13,7 +13,9 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "cypress",
+    "e2e",
+    "test",
     "yeoman-generator"
   ],
   "devDependencies": {
