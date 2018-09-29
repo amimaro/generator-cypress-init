@@ -43,6 +43,14 @@ module.exports = class extends Generator {
       this.templatePath('tests/e2e/_.eslintrc.js'),
       this.destinationPath('.eslintrc.js')
     );
+    if (this.fs.exists(this.destinationPath('./package.json'))) {
+      let pack = JSON.parse(this.fs.read('./package.json'));
+      if (pack.scripts === undefined) pack.scripts = {};
+      pack.scripts = Object.assign(pack.scripts, {
+        e2e: 'cypress open'
+      });
+      this.fs.write('./package.json', JSON.stringify(pack, null, 2));
+    }
   }
 
   install() {
