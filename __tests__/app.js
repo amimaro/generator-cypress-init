@@ -7,10 +7,10 @@ describe('generator-cypress-init:app', () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, '../generators/app'))
-      .withPrompts({ someAnswer: true });
+      .withPrompts({ files: true });
   });
 
   it('creates files', () => {
-    assert.file(['dummyfile.txt']);
+    assert.file(['./tests/e2e/specs/test.js']);
   });
 });
