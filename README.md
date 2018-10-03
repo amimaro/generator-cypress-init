@@ -1,5 +1,7 @@
 # generator-cypress-init [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Cypress Files Starter
+> Basic Cypress Setup
+
+Creates a test folder and a cypress JSON config file.
 
 ## Installation
 
@@ -14,6 +16,7 @@ Then generate your new project:
 
 ```bash
 yo cypress-init
+npm run e2e
 ```
 
 ## Getting To Know Yeoman
