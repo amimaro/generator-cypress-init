@@ -41,7 +41,7 @@ module.exports = class extends Generator {
     );
     this.fs.copy(
       this.templatePath('tests/e2e/_.eslintrc.js'),
-      this.destinationPath('.eslintrc.js')
+      this.destinationPath('tests/e2e/.eslintrc.js')
     );
     if (this.fs.exists(this.destinationPath('./package.json'))) {
       let pack = JSON.parse(this.fs.read('./package.json'));
