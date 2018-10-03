@@ -16,6 +16,12 @@ module.exports = class extends Generator {
           'package.json'
         )}?`,
         default: true
+      },
+      {
+        type: 'input',
+        name: 'baseUrl',
+        message: `Set ${chalk.red('baseUrl')}`,
+        default: null
       }
     ];
 
@@ -50,6 +56,11 @@ module.exports = class extends Generator {
         e2e: 'cypress open'
       });
       this.fs.write('./package.json', JSON.stringify(pack, null, 2));
+    }
+    if (this.props.baseUrl !== null) {
+      let cypressConfig = JSON.parse(this.fs.read('./cypress.json'));
+      cypressConfig.baseUrl = this.props.baseUrl;
+      this.fs.write('./cypress.json', JSON.stringify(cypressConfig, null, 2));
     }
   }
 
