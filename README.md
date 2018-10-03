@@ -19,6 +19,8 @@ yo cypress-init
 npm run e2e
 ```
 
+[Cypress Docs](https://docs.cypress.io/)
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
